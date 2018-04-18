@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Public Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Public Panel</h1>
+                <h3>Welcome to the Ski Resort Database</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p><a href="admin">ADMIN PANEL</a></p>
+                <p><a target="_blank" href=":81/test.php">POS PANEL <br>This is technically my customer panel. <br> Changing ports does weird things so you have to refresh the page)</a></p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

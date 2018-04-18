@@ -1,0 +1,95 @@
+.btn-admin {
+    float: right;
+}
+
+.showstuff {
+    padding: 35px;
+    background-color: rgb(200, 232, 189);
+}
+
+.showstuff h2 {
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    font-weight: bold;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    padding: 2px 4px;
+}
+
+tr {
+    margin: 5px 0px;
+    border-bottom: solid #d9d9d9
+}
+
+td {
+    padding: 2px 4px;
+	max-width:600px;
+word-wrap:break-word;
+}
+
+tr:hover {
+    background-color: rgba(241, 241, 241, 0.25);
+}
+
+.customSQL {
+    background-color: aquamarine;
+    padding: 30px 10px;
+}
+
+.structuredAdd {
+    background-color: rgba(253, 223, 155, 0.82);
+    padding: 30px 10px;
+}
+
+.container {
+    width: 95%;
+}
+
+img {
+    max-width: 220px;
+}
+
+.adminheader h1 {
+    font-size: 75px;
+    margin-bottom: 25px;
+}
+
+.showstatus {
+    color: #99ea1e;
+}
+
+.updatestuff {
+    background-color: #e68f8f;
+    padding: 50px 0px
+}
+
+.dbstatus .btn {
+    width: 31.5%;
+}
+
+.dbstatus .btn:hover {
+    cursor: default;
+
+}
+
+.btn-info {
+width:100%!important}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c!important;
+    border-color: #4cae4c;
+    transition: 1.0s;
+}
+
+tab {
+    margin-left: 33px;
+    margin-right: 5px;
+}

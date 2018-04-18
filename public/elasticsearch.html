@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Public Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Elastic Search Panel</h1>
+                <h3>Employees can submit their favorite books or quotes to help with moral. You can query that database of Books. As of 4/17 there are 2 books in the database.</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="form-group">
+                    <label for="search">Search:</label>
+                    <input type="search" class="form-control" id="search" placeholder="Andrew">
+                </div>
+                <button onclick="getElResults()" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="appendSearch">
+
+    </div>
+</body>
+
+</html>
+
+
+
+<script>
+    function getElResults() {
+        var search = $('#search').val();
+        var url = 'http://192.168.50.33:9200/blog/_search?q='+search;
+        
+        
+        $.get( url, function( data ) {
+            displayResults(data);
+        });
+    }
+    
+    function displayResults(data){
+        console.log( data.hits.hits[0] );
+        data = data.hits.hits[0];
+        
+        var table = "<h3>Sending back top result</h3><br><br>"
+        table = '<table>';
+        table+='<tr><th>Index</th><th>Score</th><th>Author</th><th>Title</th>';
+        
+        table+='<tr><td>'+data._index+'</td><td>'+data._score+'</td><td>'+data._source.author+'</td><td>'+data._source.title+'</td><tr>';
+        
+        $('#appendSearch').html(table);
+        $('#appendSearch').append('<br><br><p>'+data._source.body+'</p>');
+    }
+    
+    window.onerror = function(message, source, lineno, colno, error) { alert('Could not find anything') }
+
+
+</script>

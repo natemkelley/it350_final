@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyC_l58MrjoLbVAycctuwrjSbTToFhdBRlc",
+            authDomain: "it350-cc5f6.firebaseapp.com",
+            databaseURL: "https://it350-cc5f6.firebaseio.com",
+            projectId: "it350-cc5f6",
+            storageBucket: "it350-cc5f6.appspot.com",
+            messagingSenderId: "237078450393"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.6.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.6.2/firebaseui.css" />
+
+
+    <title>DBA Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+    <div id="firebaseui-auth-container">
+
+    </div>
+
+    <div class="container dbstatus hide">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Database Status</h1>
+            </div>
+            <div class="col-md-8 col-md-offset-2 ">
+                <button type="button" class="btn btn-default btn-lg btn-mysql">MySQL<br>Getting Status</button>
+                <button type="button" class="btn btn-default btn-lg btn-nosql">Firebase NoSQL<br>Getting Status</button>
+                <button type="button" class="btn btn-default btn-lg btn-elasticsearch">Elastic Search<br>Getting Status</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container dbstatus hide" style="background-color: azure;margin-top: 50px">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Database Usage</h1>
+            </div>
+            <div class="col-md-8 col-md-offset-2 " id="dbuse-mysql">
+                <h3><a href="#demo2" class="btn btn-info" data-toggle="collapse">MySQL</a></h3>
+                <div id="demo2" class="collapse">
+                    <p>Optimization queries are shown below under DATABASE OPTIMIZATIONS which demostrate the database if being used</p>
+
+                </div>
+
+            </div>
+            <div class="col-md-8 col-md-offset-2 " id="dbuse-nosql">
+                <h3><a href="#demo1" class="btn btn-info" data-toggle="collapse">Firebase NoSQL</a></h3>
+
+                <div id="demo1" class="collapse">
+                    <table id="fb-usage">
+                        <tr>
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Complaint</th>
+                            <th>eMail</th>
+                        </tr>
+                    </table>
+                    <table id="fb-usage-2" style="margin-top: 30px">
+                        <tr>
+                            <th>Creation Time</th>
+                            <th>lastSignInTime</th>
+                            <th>Display Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+            <div class="col-md-8 col-md-offset-2 " id="dbuse-elasticsearch">
+                <h3><a href="#demo" class="btn btn-info" data-toggle="collapse">Elastic Search</a></h3>
+
+                <div id="demo" class="collapse">
+                    <p>This show the logs of queries that have been run on elastic search</p>
+                    <h3>To use elastic search go to <a href="http://192.168.50.33/elasticsearch.html" target="_blank">this site</a></h3>
+                    <div id="table4el"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container dbstatus hide" style="background-color: #f4dafb;margin-top: 50px">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Database Queries that could be optimized</h1>
+                <p>The top seven queries are sorted from longest amount (top) to shortest</p>
+            </div>
+            <div class="col-md-8 col-md-offset-2 " id="dbuse-opt">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container backups hide" style="background-color: lightcyan;margin-top: 50px">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Backs Ups</h1>
+            </div>
+            <div class="col-md-8 col-md-offset-2 ">
+                <ul id="backups-list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<link rel="stylesheet" href="resources/css/style.css">
+<script src="resources/js/dba.js"></script>
+
+</html>
